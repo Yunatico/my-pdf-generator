@@ -12,8 +12,8 @@ const App = () => {
 	const generatePDF = () => {
 		const doc = new jsPDF('portrait', 'mm', [210, 297]);
 		// Ajout de la police Montserrat
-		doc.addFileToVFS('Montserrat-Regular-normal.ttf', font);
-		doc.addFont('Montserrat-Regular-normal.ttf', 'Montserrat-Regular', 'normal');
+		doc.addFileToVFS('Montserrat-Regular.ttf', font);
+		doc.addFont('Montserrat-Regular.ttf', 'Montserrat', 'normal');
 		doc.setFont('Montserrat');
 		// Mise en forme du texte
 		doc.text(`Titre : ${data.titre}`, 10, 10);
