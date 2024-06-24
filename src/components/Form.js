@@ -1,23 +1,23 @@
 import React, { useState } from 'react';
 
 const Form = ({ setData }) => {
-	const [firstName, setFirstName] = useState('');
-	const [lastName, setLastName] = useState('');
+	const [titre, setTitre] = useState('');
+	const [texte, setTexte] = useState('');
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		setData({ firstName, lastName });
+		setData({ titre, texte });
 	};
 
 	return (
 		<form onSubmit={handleSubmit}>
 			<div>
-				<label>First Name:</label>
-				<input type='text' value={firstName} onChange={(e) => setFirstName(e.target.value)} />
+				<label>Titre :</label>
+				<input type='text' value={titre} onChange={(e) => setTitre(e.target.value)} />
 			</div>
 			<div>
-				<label>Last Name:</label>
-				<input type='text' value={lastName} onChange={(e) => setLastName(e.target.value)} />
+				<label>Texte :</label>
+				<input type='text' value={texte} onChange={(e) => setTexte(e.target.value)} />
 			</div>
 			<button type='submit'>Update Preview</button>
 		</form>

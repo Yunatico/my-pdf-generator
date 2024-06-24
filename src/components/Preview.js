@@ -28,8 +28,8 @@ const MyDocument = ({ data }) => (
 	<Document>
 		<Page size='A3' style={styles.page}>
 			<View style={styles.section}>
-				<Text>First Name {data.firstName}</Text>
-				<Text>Last Name {data.lastName}</Text>
+				<Text>Titre {data.titre}</Text>
+				<Text>Texte {data.texte}</Text>
 			</View>
 		</Page>
 	</Document>

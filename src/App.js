@@ -7,7 +7,7 @@ import { font } from './font';
 import './App.css';
 
 const App = () => {
-	const [data, setData] = useState({ firstName: '', lastName: '' });
+	const [data, setData] = useState({ titre: '', texte: '' });
 
 	const generatePDF = () => {
 		const doc = new jsPDF('portrait', 'mm', [210, 297]);
@@ -16,8 +16,8 @@ const App = () => {
 		doc.addFont('Montserrat-Regular-normal.ttf', 'Montserrat-Regular', 'normal');
 		doc.setFont('Montserrat');
 		// Mise en forme du texte
-		doc.text(`First Name: ${data.firstName}`, 10, 10);
-		doc.text(`Last Name: ${data.lastName}`, 10, 20);
+		doc.text(`Titre : ${data.titre}`, 10, 10);
+		doc.text(`Texte : ${data.texte}`, 10, 20);
 		doc.save('generated.pdf');
 	};
 
