@@ -4,7 +4,7 @@ import { Page, Text, View, Document, StyleSheet, PDFViewer, Font } from '@react-
 // Register font
 Font.register({
 	family: 'Montserrat',
-	src: 'http://fonts.gstatic.com/s/montserrat/v10/zhcz-_WihjSQC0oHJ9TCYC3USBnSvpkopQaUR-2r7iU.ttf'
+	src: 'https://fonts.gstatic.com/s/montserrat/v10/zhcz-_WihjSQC0oHJ9TCYC3USBnSvpkopQaUR-2r7iU.ttf'
 });
 
 const styles = StyleSheet.create({
