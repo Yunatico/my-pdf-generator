@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Form from './components/Form';
 import Preview from './components/Preview';
 import { jsPDF } from 'jspdf';
+import { font } from './font';
 
 import './App.css';
 
@@ -9,7 +10,12 @@ const App = () => {
 	const [data, setData] = useState({ firstName: '', lastName: '' });
 
 	const generatePDF = () => {
-		const doc = new jsPDF('landscape', 'mm', 'a3');
+		const doc = new jsPDF('portrait', 'mm', [210, 297]);
+		// Ajout de la police Montserrat
+		doc.addFileToVFS('Montserrat-Regular-normal.ttf', font);
+		doc.addFont('Montserrat-Regular-normal.ttf', 'Montserrat-Regular', 'normal');
+		doc.setFont('Montserrat');
+		// Mise en forme du texte
 		doc.text(`First Name: ${data.firstName}`, 10, 10);
 		doc.text(`Last Name: ${data.lastName}`, 10, 20);
 		doc.save('generated.pdf');

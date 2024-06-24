@@ -1,5 +1,11 @@
 import React from 'react';
-import { Page, Text, View, Document, StyleSheet, PDFViewer } from '@react-pdf/renderer';
+import { Page, Text, View, Document, StyleSheet, PDFViewer, Font } from '@react-pdf/renderer';
+
+// Register font
+Font.register({
+	family: 'Montserrat',
+	src: 'http://fonts.gstatic.com/s/montserrat/v10/zhcz-_WihjSQC0oHJ9TCYC3USBnSvpkopQaUR-2r7iU.ttf'
+});
 
 const styles = StyleSheet.create({
 	page: {
@@ -10,7 +16,11 @@ const styles = StyleSheet.create({
 	section: {
 		margin: 10,
 		padding: 10,
-		flexGrow: 1
+		textAlign: 'center',
+		flexGrow: 1,
+		fontFamily: 'Montserrat',
+		fontWeight: 600,
+		fontSize: '60pt'
 	}
 });
 
@@ -18,8 +28,8 @@ const MyDocument = ({ data }) => (
 	<Document>
 		<Page size='A3' style={styles.page}>
 			<View style={styles.section}>
-				<Text>First Name: {data.firstName}</Text>
-				<Text>Last Name: {data.lastName}</Text>
+				<Text>First Name {data.firstName}</Text>
+				<Text>Last Name {data.lastName}</Text>
 			</View>
 		</Page>
 	</Document>
